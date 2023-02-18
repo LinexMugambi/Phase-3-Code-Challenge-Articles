@@ -1,6 +1,6 @@
 # Phase-3-Code-Challenge-Articles
  
- ## Title:Magazine Article S
+ ## Title:Magazine Article 
  
 ## project description
 Users can create, view, and manage magazine articles and their writers using this command-line tool. Users have the ability to make new authors and assign them to particular articles or magazines with particular categories.
