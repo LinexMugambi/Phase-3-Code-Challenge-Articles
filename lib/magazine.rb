@@ -8,4 +8,12 @@ class Magazine
         @category = category
         @@all << self
       end
+      def self.all
+        @@all
+      end
+
+         ##helper
+      def magazine_articles
+        Article.all.select{|article| article.magazine.name == self.name}
+      end
 end
