@@ -1,24 +1,20 @@
 class Author
-    attr_reader :name
-
-
-    def initialize(name)
-      @name = name
-    end
-    def articles
-        Article.all.select{|article| article.author.name == self.name}
-      end
-
+  attr_reader :name
+  @@all = []
+  def initialize(name)
+    @name = name
+    @@all << self
+  end
+  def self.all
+    @@all
+  end
+  def articles
+    Article.all.select {|article| article.author == self}
+  end
   def magazines
-    all_magazines = articles.map{ |article| article.magazine}
-    all_magazines.uniq
+    articles.map {|article| article.magazine}
   end
-    
-  def add_article(magazine, title)
-    Article.new(self, magazine, title)
+  def magazine_titles
+    magazines.map {|magazine| magazine.name}
   end
-  def topic_areas
-    magazines.collect{|magazine| magazine.category}.uniq
-  end
-
 end

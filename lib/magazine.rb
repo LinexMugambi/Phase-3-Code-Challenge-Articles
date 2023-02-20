@@ -1,35 +1,27 @@
 class Magazine
-
-    attr_accessor :name, :category
-    @@all = []
-
-    def initialize(name, category)
-        @name = name
-        @category = category
-        @@all << self
+  @@all = []
+  attr_accessor :name, :category, :contributing_authors, :article_titles
+  def initialize(name, category)
+    @name = name
+    @category = category
+    @contributing_authors = []
+    @article_titles = []
+    @@all << self
+  end
+  def self.all
+    @@all
+  end
+  def self.all_authors
+    all_authors = []
+    all.each do |magazine|
+      magazine.contributing_authors.each do |author|
+        all_authors << author
       end
-      def self.all
-        @@all
-      end
-
-         ##helper
-      def magazine_articles
-        Article.all.select{|article| article.magazine.name == self.name}
-      end
-      def contributors
-        magazine_articles.collect{|article| article.author}.uniq
-      end
-      def self.find_by_name(name)
-        find_magazines = self.all.select { |magazine| magazine.name == name}
-        find_magazines.first
-      end
-      def article_titles
-        magazine_articles.collect{|article| article.title}
-      end
-      def contributing_authors
-        #tally authors then map through the articles and get array of authors
-        magazine_authors = magazine_articles.collect{|article| article.author.name}
-        magazine_authors.tally.each {|key, value|  value > 2}
-        magazine_authors
-      end
+    end
+    all_authors.uniq
+  end
+  def add_article(author, title)
+    contributing_authors << author
+    article_titles << title
+  end
 end
