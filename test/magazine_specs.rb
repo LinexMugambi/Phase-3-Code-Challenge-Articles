@@ -1,11 +1,8 @@
 require_relative '../config/environment.rb'
 
-def reload
-  load 'config/environment.rb'
-end
 
 
-###  WRITE YOUR TEST CODE HERE ###
+#TEST CODE HERE 
 author_1= Author.new("Timothy")
 author_2 = Author.new('James')
 author_3 = Author.new('Jim')
@@ -25,4 +22,3 @@ author_3.add_article(magazine_3,"title_five")
 
 binding.pry
 
-0

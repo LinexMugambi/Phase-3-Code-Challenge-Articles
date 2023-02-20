@@ -9,6 +9,7 @@ GEM
     require_all (3.0.0)
 
 PLATFORMS
+  ruby
   x86_64-linux
 
 DEPENDENCIES
