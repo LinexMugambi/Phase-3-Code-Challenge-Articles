@@ -2,6 +2,10 @@
  
  ## Title:Magazine Article 
  
+ 
+ ![Screenshot from 2023-02-20 15-27-53](https://user-images.githubusercontent.com/117725110/220108159-9d3f4f45-6115-4ffa-af3b-06433c3c22fe.png)
+
+ 
 ## project description
 Users can create, view, and manage magazine articles and their writers using this command-line tool. Users have the ability to make new authors and assign them to particular articles or magazines with particular categories.
 ## Getting Started
